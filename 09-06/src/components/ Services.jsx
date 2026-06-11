@@ -1,50 +1,75 @@
 // ============================================================
-//  🛠️ COMPONENTE PARA COMPLETAR — TAREA ESTUDIANTE
 //  Services.jsx
-//
-//  INSTRUCCIONES:
-//  1. Define el array "servicios" con al menos 6 servicios.
-//     Cada objeto debe tener: icono, titulo, descripcion.
-//  2. Completa el JSX usando tarjetas Bootstrap (card).
-//  3. Usa .map() para renderizar — NO copies el HTML 6 veces.
-//
-//  PISTAS:
-//  - Usa <div className="row g-4"> para el grid
-//  - Cada tarjeta va en <div className="col-md-6 col-lg-4">
-//  - Clases Bootstrap útiles: card, card-body, card-title, card-text
 // ============================================================
 
-// 🛠️ PASO 1: Define aquí tu array de servicios
+// 🛠️ PASO 1: Array de servicios
 const servicios = [
-  // Ejemplo de la estructura:
-  // {
-  //   icono: '⚡',
-  //   titulo: 'Instalaciones residenciales',
-  //   descripcion: 'Instalamos sistemas eléctricos completos...',
-  // },
-
-  // TODO: Agrega aquí tus 6 servicios
+  {
+    icono: "⚡",
+    titulo: "Instalaciones Residenciales",
+    descripcion:
+      "Realizamos instalaciones eléctricas seguras y eficientes para viviendas nuevas y remodelaciones.",
+  },
+  {
+    icono: "🏢",
+    titulo: "Instalaciones Comerciales",
+    descripcion:
+      "Diseñamos e instalamos sistemas eléctricos para oficinas, locales y empresas.",
+  },
+  {
+    icono: "🔧",
+    titulo: "Mantenimiento Eléctrico",
+    descripcion:
+      "Detectamos y solucionamos fallas para garantizar el correcto funcionamiento de tus sistemas.",
+  },
+  {
+    icono: "💡",
+    titulo: "Iluminación LED",
+    descripcion:
+      "Instalamos soluciones de iluminación modernas que reducen el consumo energético.",
+  },
+  {
+    icono: "🛡️",
+    titulo: "Sistemas de Seguridad",
+    descripcion:
+      "Implementamos cámaras, alarmas y sistemas de protección para hogares y negocios.",
+  },
+  {
+    icono: "🔌",
+    titulo: "Tableros Eléctricos",
+    descripcion:
+      "Montaje, reparación y actualización de tableros eléctricos con altos estándares de calidad.",
+  },
 ];
 
 function Services() {
   return (
     <section id="servicios" className="py-5 bg-light">
       <div className="container">
-
         <div className="text-center mb-5">
           <h2 className="section-titulo">Nuestros Servicios</h2>
           <p className="section-subtitulo text-muted">
-            {/* 🛠️ TODO: Escribe una descripción corta de la sección */}
+            Ofrecemos soluciones eléctricas profesionales para hogares,
+            empresas e industrias con calidad y seguridad garantizadas.
           </p>
         </div>
 
-        {/* 🛠️ PASO 2: Renderiza las tarjetas con servicios.map(...) */}
+        {/* Renderizado dinámico con map */}
         <div className="row g-4">
-
-          {/* TODO: Tu código .map() va aquí */}
-
+          {servicios.map((servicio, index) => (
+            <div className="col-md-6 col-lg-4" key={index}>
+              <div className="card h-100 shadow-sm border-0">
+                <div className="card-body text-center">
+                  <div className="fs-1 mb-3">{servicio.icono}</div>
+                  <h5 className="card-title">{servicio.titulo}</h5>
+                  <p className="card-text text-muted">
+                    {servicio.descripcion}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-
       </div>
     </section>
   );
